@@ -1,7 +1,7 @@
 class Solution {
 public:
     int concatenatedBinary(int n) {
-        int M = 1e9 + 7, l = 0;
+        int Mod = 1e9 + 7, l = 0;
         // use long here as it potentially could overflow for int
         long ans = 0;
         for (int i = 1; i <= n; i++) {
@@ -17,7 +17,7 @@ public:
             // (x | i) means  using OR operation to set the bit
             // e.g. 0001 << 3 = 0001000
             // e.g. 0001000 | 0001111 = 0001111
-            ans = ((ans << l) | i) % M;
+            ans = ((ans << l) | i) % Mod;
         }
         return ans;
     }
