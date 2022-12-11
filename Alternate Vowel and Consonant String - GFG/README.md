@@ -9,7 +9,7 @@
 S = "aeroplane"
 <strong>Output:</strong> alanepero
 <strong>Explanation</strong>: <strong>a</strong>l<strong>a</strong>n<strong>e</strong>p<strong>e</strong>r<strong>o  
-</strong>The vowels and cosonants are arranged 
+</strong>The vowels and consonants are arranged 
 alternatively with vowels shown in bold.
 Also, there's no lexicographically smaller
 string possible with required conditions.
