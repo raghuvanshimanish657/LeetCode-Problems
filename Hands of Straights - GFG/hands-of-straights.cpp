@@ -6,27 +6,19 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   public:
-     bool isStraightHand(int n, int m, vector<int> &arr) {
-        // code here
-        
-        if(n%m) return 0;
-        sort(arr.begin(),arr.end());
-        multiset<int> st;
-        for(int i=0;i<n;i++){
-            st.insert(arr[i]);
-        }
-        while(!st.empty()){
-            int p=*st.begin();
-            st.erase(st.begin());
-            for(int i=1;i<m;i++){
-                auto it=st.upper_bound(p);
-                if(it!=st.end() && *it!=p+1) return 0;
-                if(it==st.end()) return 0;
-                st.erase(it);
-                p=p+1;
+    bool isStraightHand(int N, int groupSize, vector<int> &hand) {
+        multiset<int> s(hand.begin(),hand.end());
+        while(s.size()>0)
+        {
+            int x = *s.begin();
+            for(int i=x;i<x+groupSize;i++)
+            {
+                if(s.find(i)==s.end())
+                    return false;
+                s.erase(s.find(i));
             }
         }
-        return 1;
+        return true;
     }
 };
 
